@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('account', 'aaron move method', {
+moduleForModel('account', 'move method', {
   needs: []
 });
 

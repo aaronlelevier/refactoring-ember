@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('account', 'six - introduce explaining variable', {
+moduleForModel('account', 'aaron seven - replace temp with query', {
   needs: []
 });
 
@@ -32,7 +32,15 @@ function Account(obj = {}) {
   return x;
 }
 
+function getAccount() {
+  return new Account();
+}
+
 test('Account sendSms', function(assert) {
-  const account = new Account();
+  const account = getAccount();
   assert.equal(account.sendSms('wat'), SUCCESS_CODE);
+});
+
+test('Account sendSms', function(assert) {
+  assert.equal(getAccount().sendSms('wat'), SUCCESS_CODE);
 });

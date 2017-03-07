@@ -21,10 +21,15 @@ function Account(obj = {}) {
   x.sendSms = function(text) {
     try {
       // send sms api call succeeds
+      x._mockSendSms(text);
       return 1;
     } catch(err) {
       return 0;
     }
+  };
+
+  x._mockSendSms = function(text) {
+    console.log(text);
   };
 
   return x;

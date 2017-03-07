@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('account', 'aaron seven - replace temp with query', {
+moduleForModel('account', 'seven - replace temp with query', {
   needs: []
 });
 
@@ -11,7 +11,7 @@ const SUCCESS_CODE = 0;
 const ERROR_CODE = 1;
 
 function Account(obj = {}) {
-  const x = Object.assign({
+  let x = Object.assign({
     balance: obj.balance ? obj.balance : 0,
   }, obj);
 

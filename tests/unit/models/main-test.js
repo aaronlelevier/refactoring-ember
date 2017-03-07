@@ -10,7 +10,7 @@ moduleForModel('account', 'move method', {
 const MIN_BALANCE = 0;
 
 function Account(obj = {}) {
-  const x = Object.assign({
+  let x = Object.assign({
     balance: obj.balance ? obj.balance : 0,
   }, obj);
 

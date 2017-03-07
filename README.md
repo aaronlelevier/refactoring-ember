@@ -1,4 +1,24 @@
-# refactoring-ember
+# Refactoring
+
+Extract method
+
+Inline method
+
+Introduce explaining variable
+
+Replace temp with query
+
+Separate query from modifier
+
+Split temp variable
+
+## Refactoring by Martin Fowler
+
+[Reference Website](https://refactoring.com)
+
+[Refactoring PDF eBook](https://www.csie.ntu.edu.tw/~r95004/Refactoring_improving_the_design_of_existing_code.pdf)
+
+# Ember default README
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.

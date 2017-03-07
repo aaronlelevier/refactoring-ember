@@ -10,7 +10,7 @@ moduleForModel('account', 'two - move method', {
 const MIN_BALANCE = 0;
 
 function Account(obj = {}) {
-  const x = Object.assign({
+  let x = Object.assign({
     balance: obj.balance ? obj.balance : 0,
   }, obj);
 
@@ -30,15 +30,10 @@ function Billing() {
   };
 }
 
-test('Account defaults', function(assert) {
-  const account = new Account();
-  assert.equal(account.balance, 0);
-  assert.ok(account.shouldRecharge());
-});
-
-test('Billing will process account', function(assert) {
+test('Billing shouldRecharge', function(assert) {
   let account = new Account();
   assert.equal(account.balance, 0);
+  assert.ok(account.shouldRecharge());
 
   const billing = new Billing();
   billing.rechargeAccount(account);

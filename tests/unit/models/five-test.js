@@ -3,12 +3,12 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('account', 'aaron five - introduce explaining variable', {
+moduleForModel('account', 'five - introduce explaining variable', {
   needs: []
 });
 
 function Account(obj = {}) {
-  const x = Object.assign({
+  let x = Object.assign({
     balance: obj.balance ? obj.balance : 0,
   }, obj);
 

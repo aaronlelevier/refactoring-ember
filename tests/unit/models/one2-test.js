@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('account', 'three - move method', {
+moduleForModel('account', 'one2 - extract method', {
   needs: []
 });
 
@@ -19,23 +19,19 @@ function Account(obj = {}) {
 
 function Billing() {
   this.rechargeAccount = function(account) {
-    if (this.shouldRecharge(account)) {
+    if (account.balance <= MIN_BALANCE) {
       // process payment
       account.balance += 10;
     }
   };
-  this.shouldRecharge = function(account) {
-    return account.balance <= MIN_BALANCE;
-  };
 }
 
-test('Billing shouldRecharge', function(assert) {
+test('Billing will process account', function(assert) {
   let account = new Account();
-  assert.equal(account.balance, 0);
-
+  assert.equal(account.balance <= MIN_BALANCE, true);
   const billing = new Billing();
-  assert.equal(billing.shouldRecharge(account), true);
 
   billing.rechargeAccount(account);
+
   assert.equal(account.balance, 10);
 });

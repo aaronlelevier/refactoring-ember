@@ -7,11 +7,11 @@ moduleForModel('account', 'six - introduce explaining variable', {
   needs: []
 });
 
-const SUCCESS_CODE = 0;
-const ERROR_CODE = 1;
+const SUCCESS = 0;
+const ERROR = 1;
 
 function Account(obj = {}) {
-  const x = Object.assign({
+  let x = Object.assign({
     balance: obj.balance ? obj.balance : 0,
   }, obj);
 
@@ -19,9 +19,9 @@ function Account(obj = {}) {
     try {
       // send sms api call succeeds
       x._mockSendSms(text);
-      return SUCCESS_CODE;
+      return SUCCESS;
     } catch (err) {
-      return ERROR_CODE;
+      return ERROR;
     }
   };
 
@@ -34,5 +34,5 @@ function Account(obj = {}) {
 
 test('Account sendSms', function(assert) {
   const account = new Account();
-  assert.equal(account.sendSms('wat'), SUCCESS_CODE);
+  assert.equal(account.sendSms('wat'), SUCCESS);
 });

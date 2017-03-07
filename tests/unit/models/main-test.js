@@ -18,6 +18,15 @@ function Account(obj = {}) {
     return x.balance <= MIN_BALANCE;
   };
 
+  x.sendSms = function(text) {
+    try {
+      // send sms api call succeeds
+      return 1;
+    } catch(err) {
+      return 0;
+    }
+  };
+
   return x;
 }
 
@@ -29,6 +38,11 @@ function Billing() {
     }
   };
 }
+
+test('Account sendSms', function(assert) {
+  const account = new Account();
+  assert.equal(account.sendSms('wat'), 1);
+});
 
 test('Account defaults', function(assert) {
   const account = new Account();
